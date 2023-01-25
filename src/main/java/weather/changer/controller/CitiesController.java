@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import weather.changer.dto.CityDTO;
 import weather.changer.model.City;
-import weather.changer.service.CitiesService;
-
 import javax.validation.Valid;
+import weather.changer.service.CitiesService;
 
 @Controller
 @RequestMapping("/cities")
@@ -23,6 +22,7 @@ public class CitiesController {
     @PostMapping("/addCity")
     public ResponseEntity<CityDTO> addCity(@Valid @RequestBody City city) {
         citiesService.save(city);
-        return new ResponseEntity<>(new CityDTO(city.getName(), city.getOblast()), HttpStatus.CREATED);
+        return new ResponseEntity<>(new CityDTO(city.getName(),
+                city.getOblast()), HttpStatus.CREATED);
     }
 }

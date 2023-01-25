@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import weather.changer.model.City;
 import weather.changer.repository.CitiesRepository;
-
 import java.util.Optional;
 
 @Service
